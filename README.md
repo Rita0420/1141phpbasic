@@ -1,4 +1,4 @@
-# 1141phpbasi
+# 1141phpbasic
 ## php基礎
 ### 1.使用情境模擬
 ### 2.git hub classroom練習
