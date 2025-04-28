@@ -67,6 +67,53 @@ if($test){
     }
     ?>
 </table>
+<style>
+    #tt{
+        border-collapse:collapse;
+        margin:20px;
+        box-shadow:2px 2px 15px red;
+    }
+    #tt td{
+        padding:3px 6px;
+        border:1px solid #CCC;
+        text-align:center;
+        width:25px;
+        text-shadow:1px 1px red;
+    }
+    #tt tr:nth-child(1),
+    #tt td:nth-child(1){
+        background-color:#CCC
+    }
+</style>
+
+<h2>交叉計算的九九乘法表</h2>
+<table id=tt>
+    <tr>
+        <td></td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+    </tr>
+    <?php
+      
+    for($j=1;$j<=9;$j++){
+
+      echo "<tr>"; 
+         echo "<td>$j</td>";  //每次跑之前加一行
+       for($i=1;$i<=9;$i++){
+      echo "<td>". ($j * $i). "</td>";
+    }
+       echo "</tr>";
+    }
+    ?>
+</table>
+
 
 </body>
 </html>
