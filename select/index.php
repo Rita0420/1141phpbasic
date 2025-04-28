@@ -18,8 +18,8 @@
 
 
 <?php
-$score="55";
-if(!(is_numeric($score) & ($score)>0 & ($score)<=100)){
+$score="99";
+if(!(is_numeric($score) && $score>0 && $score<=100)){
     echo "請輸入合法的成績數字";
     exit();
 }
@@ -104,6 +104,7 @@ if(($year%4==0 && $year % 100 !=0) || ($year % 400 ==0)){
 }
 
 ?>
+
 </body>
 </html>
 
