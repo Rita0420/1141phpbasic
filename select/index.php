@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>選擇結構</title>
+</head>
+<body>
+
+<h1>判斷成績</h1>
+<p>給定一個成績數字，判斷是否及格(60)分</p>
+<p>
+    1.不及格使用紅色字顯示，及格使用綠色字顯示
+</p>
+<p>
+    2.判斷$score是否是數字，如果不是數字則提示錯誤
+</p>
+
+
+<?php
+$score="55";
+if(!(is_numeric($score) & ($score)>0 & ($score)<=100)){
+    echo "請輸入合法的成績數字";
+    exit();
+}
+echo "你的成績是:".$score."分";
+echo "<br>";
+echo "判定結果:";
+
+if($score>=60){
+    echo "<span style='color:green'>及格</span>";
+}else{
+    echo "<span style='color:red'>不及格</span>";
+}
+
+echo "<br>";
+
+?>
+<h2>分配成績等級</h2>
+<ul>
+<li>0~59=>E</li>
+<li>60~69=>D</li>
+<li>70~79=>C</li>
+<li>80~89=>B</li>
+<li>90~100=>A</li>
+</ul>
+<?php
+$level='';
+
+if($score>=90 && $score<=100){
+    $level='A';
+}else if($score>=80 && $score<=89){
+    $level='B';
+}else if($score>=70 && $score<=79){
+    $level='C';
+}else if($score>=60 && $score<=69){
+    $level='D';
+}else if($score>=0 && $score<=59){
+    $level='E';
+}
+
+echo "<br>";
+echo $level;
+?>
+<h2>依成績給評語</h2>
+
+<?php
+switch($level){
+    case "A":
+        echo "<span style='color:green'>表現優良，請繼續保持</span>";
+    break;
+    case "B":
+        echo "值得肯定，還有進步空間";
+    break;
+    case "C":
+        echo "需要更多練習";
+    break;
+    case "D":
+        echo "需要加強基本功";
+    break;
+    case "E":
+        echo "<span style='color:red'>是否無心學業?<spen>";
+    break;
+    default;
+        echo "請修復錯誤";
+}
+?>
+
+</body>
+</html>
+
