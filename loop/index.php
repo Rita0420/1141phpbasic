@@ -108,9 +108,8 @@ if($test){
          echo "<td>$j</td>";  //每次跑之前加一行
        for($i=1;$i<=9;$i++){
       echo "<td>". ($j * $i). "</td>";
-    }
+    }}
        echo "</tr>";
-    }
     ?>
 </table>
 

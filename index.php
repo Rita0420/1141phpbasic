@@ -1,25 +1,32 @@
-<?php
-
-define("PI",3.141592);
-
-$age=28;
-$name="黃瑞妤";
-$ename="Rita";
-
-
-echo '我的年齡是:' . $age . "歲";
-echo "<br>";
-echo "我的名字是:" . $name;
-echo "<br>";
-echo PI;
-
-echo "<hr>";
-
-$age=16;
-$name="王小明";
-
-echo '我的年齡是:' . $age . "歲";
-echo "<br>";
-echo "我的名字是:" . $name;
-echo "<br>";
-echo PI;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>程式基礎</title>
+    <style>
+        ul{
+            list-style-type:none;
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            width: 70%;
+        }
+        li{
+            padding:10px 20px;
+            border:1px solid blue;
+            border-radius:15px;
+            box-shadow:1px 1px 5px #eee;
+            margin:2%;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="var.php">變數</a></li>
+        <li><a href="./select/index.php">判斷式</a></li>
+        <li><a href="./loop/index.php">迴圈-重複結構</a></li>
+        <li><a href="./array/index.php">陣列</a></li>
+    </ul>
+</body>
+</html>
