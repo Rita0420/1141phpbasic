@@ -159,5 +159,57 @@ foreach($lotto as $value){
 }
 ?>
 
+
+<h2>找出五百年內的閏年</h2>
+
+<ul>
+    <li>請依照閏年公式找出五百年內的閏年</li>
+    <li>使用陣列來儲存閏年</li>
+    <li>使用迴圈來印出閏年</li>
+</ul>
+
+<?php
+$year=[];
+for($i=2025;$i<=2525;$i++){
+    if(($i%4==0 && $i%100!=0)|| ($i%400==0)){
+        $year[]=$i;
+    }
+}
+
+foreach($year as $value){
+    echo $value . ",";
+}
+echo "<br>";
+$theyear=2400;
+
+// if(in_array($theyear,$year)){
+//     echo $theyear . "是閏年";
+// }else{
+//     echo $theyear . "不是閏年";
+// }
+
+echo $theyear.($theyear?"是閏年":"不是閏年")."<br>";
+
+
+$year2=[];
+for($i=2025;$i<=2525;$i++){
+    if(($i%4==0 && $i%100 !=0)||($i%400==0)){
+        $year2[$i]=true;
+    }else{
+        $year2[$i]=false;
+    }
+}
+echo "<br>";
+
+$ty=2100;
+// if($year2[$ty]){
+//     echo $ty. "是閏年";
+// }else{
+//     echo $ty . "不是閏年";
+// }
+
+echo $ty . ($year2[$ty]?"是閏年":"不是閏年")."<br>";
+
+?>
 </body>
 </html>
