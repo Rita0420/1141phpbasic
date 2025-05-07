@@ -92,7 +92,7 @@ foreach($array as $value){
     echo $value . "<br>";
 }
 
-
+//https://grok.com/share/c2hhcmQtMg%3D%3D_f44dcacb-443a-4742-89ce-238132ba6615
 
 $array2=[];
 for($i=1;$i<=9;$i++){
@@ -120,8 +120,9 @@ echo $array2[44];
 <?php
 $lotto=[];
 for($i=0;$i<6;$i++){
+    //rand亂數1~38
     $num=rand(1,38);
-
+    //確保數字不會重複
     if(!in_array($num,$lotto)){
         $lotto[]=$num;
     }
@@ -158,7 +159,7 @@ foreach($lotto as $value){
     echo $value." ";
 }
 ?>
-
+<!-- https://grok.com/share/c2hhcmQtMg%3D%3D_19ef5dac-5021-4252-8b67-0ffc5739244f -->
 
 <h2>找出五百年內的閏年</h2>
 
@@ -284,7 +285,7 @@ echo "</pre>";
 
 ?>
 
-
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
