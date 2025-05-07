@@ -24,12 +24,12 @@ $students=[
 // for($i=0;$i<count($test);$i++){
 //     echo $test[$i].",";
 // }
-// as 當;找出$students這個陣列的值,命$name(judy等等的陣列)它指向後面的科目加成績($score)
+// as 當;找出$students這個陣列的值,命$name(judy等等的陣列)它指向後面的值科目加成績($score)
 foreach($students as $name => $score){
     //顯示出最外層的陣列
     echo $name.":";
     echo "<ul>";
-    //找出科目加成績($score)裡的科目($subjects)和成績($s)
+    //找出科目加成績($score)裡的陣列科目($subjects)和值成績($s)
     foreach($score as $subject => $s){
         echo "<li>";
         echo $subject.":";
@@ -73,8 +73,9 @@ for($i=0;$i<count($names);$i++){
 </ul>
 
 <?php
+//設好一個空的陣列
 $array=[];
-
+//九九乘法表,從1開始作迴圈到9
 for($i=1;$i<=9;$i++){
     for($j=1;$j<=9;$j++){
         //字串
@@ -87,7 +88,7 @@ for($i=1;$i<=9;$i++){
 echo "<pre>";
 print_r($array);
 echo "</pre>";
-
+//foreach可以尋遍陣列裡的值,可以一一秀出來
 foreach($array as $value){
     echo $value . "<br>";
 }
@@ -123,6 +124,7 @@ for($i=0;$i<6;$i++){
     //rand亂數1~38
     $num=rand(1,38);
     //確保數字不會重複
+    //但這函數會有問題,需要6個數但只要數字重複被挑掉後會少
     if(!in_array($num,$lotto)){
         $lotto[]=$num;
     }
@@ -132,29 +134,32 @@ print_r($lotto);
 echo "</pre>";
 
 $lotto=[];
+//一樣在亂數中找6個數字
 while(count($lotto)<6){
     $num=rand(1,38);
-
+    //確保數字不會重複
     if(!in_array($num,$lotto)){
         $lotto[]=$num;
     }
 }
-
+//把值秀出來
 foreach($lotto as $value){
     echo $value . " ";
 }
 echo "<br>";
 
-
+//直接把數字陣列出來
 $nums=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38];
 
 $lotto=[];
 for($i=0;$i<6;$i++){
     //打亂號碼
     shuffle($nums);
+    //挑一個數字出來
     $lotto[]=array_pop($nums);
 }
 echo "<br>";
+//秀出值
 foreach($lotto as $value){
     echo $value." ";
 }
@@ -256,7 +261,7 @@ for($j=0;$j<60;$j++){
 
 }
 echo $d[(2136%60)-4];
-
+//https://grok.com/share/c2hhcmQtMg%3D%3D_cdeddf2d-5a0e-4de4-b247-a051e9b477f4
 ?>
 
 <h2>請設計一支程式，在不產生新陣列的狀況下，將一個陣列的元素順序反轉(利用迴圈)</h2>
