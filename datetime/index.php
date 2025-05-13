@@ -130,6 +130,17 @@ $days=($birthday_diff/(60*60*24));
 echo "我的出生日是:$birthday<br>";
 echo "距離自己下次生日還有$days 天";
 ?>
+<h2>利用迴圈來計算連續五個周一的日期</h2>
+
+<?php
+
+$mon="2025-05-12";
+for($i=0;$i<5;$i++){
+    $temp=strtotime("+$i week",strtotime($mon));
+    echo date("Y-m-d l",$temp)."<br>";
+}
+?>
+
 
 
 
