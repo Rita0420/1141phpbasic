@@ -43,6 +43,48 @@ echo $str;
 
 ?>
 
+<h2>字串分割</h2>
+<p>將”this,is,a,book”依”,”切割後成為陣列</p>
 
+<?php
+$str="this,is,a,book";
+
+$str=explode(",",$str);
+
+//因為轉換出來是陣列所以不能用echo
+print_r($str);
+
+echo "<br>";
+echo "<br>";
+echo "<br>";
+?>
+<h2>字串組合</h2>
+<p>將上例陣列重新組合成“this is a book”</p>
+<?php
+$str="this,is,a,book";
+
+$str=explode(",",$str);
+
+$a=implode(" ",$str);
+echo $a;
+?>
+<br><br><br>
+<?php
+$str1="this,is,a,book";
+$str1=str_replace(","," ",$str1);
+
+echo $str1;
+
+
+?>
+
+<h2>子字串取用</h2>
+<p>將” The reason why a great man is great is that he resolves to be a great man
+    ”只取前十字成為” The reason…”</p>
+<?php
+$str="The reason why a great man is great is that he resolves to be a great man";
+$str=substr($str,0,10);
+echo $str;
+?>
 </body>
 </html>
