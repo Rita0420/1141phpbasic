@@ -28,6 +28,7 @@
         <li><a href="./loop/index.php">迴圈-重複結構</a></li>
         <li><a href="./loop/stars.php">迴圈-星星</a></li>
         <li><a href="./array/index.php">陣列</a></li>
+        <li><a href="./string/index.php">字串</a></li>
     </ul>
 </body>
 </html>
