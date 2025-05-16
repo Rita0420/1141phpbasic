@@ -79,7 +79,7 @@ $month=5;
 $today=date("Y-$month-d");
 $firstday=date("Y-$month-01");
 $firstdayweek=date("w",strtotime($firstday));//w=> 0(週日)至6(週六)
-$thedaysofmonth=date("t",strtotime($firstday));
+$thedaysofmonth=date("t",strtotime($firstday));//t=>那個月有幾天
 
 $spdate=[
     '2025-05-11'=>'母親節',
@@ -91,19 +91,43 @@ $monthdays=[];
 
 //填入空白日期
 for($i=0;$i<$firstdayweek;$i++){
-    $monthdays[]="&nbsp";
+    $monthdays[]=[];
 }
 
 //填入當日日期
 for($i=0;$i<$thedaysofmonth;$i++){
-    $timestamp=strtotime("$i days",strtotime($firstday));
-    $date=date("d",$timestamp);
-    $monthdays[]=$date;
+    $timestamp=strtotime("$i days",strtotime($firstday));//每跑一次+i天
+    $date=date("d",$timestamp);//只顯示日期(01-31)
+    $holiday="";
+    foreach($spdate as $d=>$value){
+        if($d==date("Y-m-d",$timestamp)){
+            $hoilday=$value;
+        }
+    }
+    $monthdays[]=[
+            "day"=>date("d", $timestamp),
+            "fullDate"=>date("Y-m-d", $timestamp),
+            "weekofyear"=>date("W", $timestamp),
+            "week"=>date("w", $timestamp),
+            "daysofyear"=>date("z", $timestamp),
+            "workday"=>date("N", $timestamp)<6?true:false,
+            "holiday"=>$holiday,
+        ];
 }
+?>
+
+
+
+
+
+<?php
+
+
 
 
 //建立外框及標題
 echo "<div class='box-container'>";
+
 echo "<div class='th-box'>日</div>";
 echo "<div class='th-box'>一</div>";
 echo "<div class='th-box'>二</div>";
@@ -114,13 +138,51 @@ echo "<div class='th-box'>六</div>";
 
 //使用foreach迴圈印出日期
 foreach($monthdays as $day){
+ 
     echo "<div class='box'>";
-    echo $day;
+    echo "<div class='day-info'>";
+        echo "<div class='day-num'>";
+        if(isset($day['day'])){
+
+            echo $day["day"];
+        }else{
+            echo "&nbsp;";
+        }
+        echo "</div>";
+        echo "<div class='day-week'>";
+        if(isset($day['weekofyear'])){
+            echo $day["weekofyear"];
+        }else{
+            echo "&nbsp;";
+        }
+
+        echo "</div>";
+    echo "</div>";
+
+
+    echo "<div class='holiday-info'>";
+    if(isset($day['holiday'])){
+        echo "<div class='holiday'>";
+        echo $day['holiday'];
+        echo "</div>";
+    }else{
+        echo "&nbsp;";
+    }
+    echo "</div>";
+    echo "<div class='todo-info'>";
+    if(isset($day['todo']) && !empty($day['todo'])){
+        
+            echo "<div class='todo'>";
+            echo $day['todo'];
+            echo "</div>";
+        
+    }else{
+        echo "&nbsp;";
+    }
+    echo "</div>";
     echo "</div>";
 }
-
 echo "</div>";
-
 ?>
 
 <h2 style='text-align:center;'><?=date(" Y 年 m 月 "); ?></h2>
